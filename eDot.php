@@ -316,7 +316,7 @@ echo PHP_EOL;
             $codesendOTP = get_between($sendOTP[1], '"code":', ',"');
             $msgotp = get_between($sendOTP[1], '"data":"', '"}');
             if ($codesendOTP == 200) {
-                echo " -> Otp Sent".PHP_EOL;
+                echo "[-] Otp Sent".PHP_EOL;
                 $time = time();
                 CheckUlangOTP1:
                 $otpbos = input("[-] OTP");
