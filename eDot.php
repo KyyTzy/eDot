@@ -10,6 +10,8 @@ echo $bold.$fgreen."[-] Bot eDot v1 by CatzBurry\n\n".$cln;
     echo "========\n\n";
     echo $bold . $fgreen . "[1]$cln Auto Register With AdaOTP$cln\n";
     echo $bold . $fgreen . "[2]$cln Manual Register With OTP$cln\n";
+echo "\n";
+
 web:
 $pilihweb = "[-] Pilih Web ";
 $webOTP = input("$bold$orange$pilihweb$cln");
@@ -310,7 +312,7 @@ echo PHP_EOL;
                 "Accept-Language: en-GB,en-US;q=0.9,en;q=0.8",
                 "sso-token: ".$token_code,
             ];
-            $sendOTP = curl("https://api-accounts.edot.id/api/user/send_otp_wa", $data, $headers);
+            $sendOTP = curl("https://api-accounts.edot.id/api/user/send_otp_phone", $data, $headers);
             $codesendOTP = get_between($sendOTP[1], '"code":', ',"');
             $msgotp = get_between($sendOTP[1], '"data":"', '"}');
             if ($codesendOTP == 200) {
