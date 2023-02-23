@@ -1,5 +1,16 @@
 <?php
 
+
+function generateRandomString($length = 10) {
+    $characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
+    $charactersLength = strlen($characters);
+    $randomString = '';
+    for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[rand(0, $charactersLength - 1)];
+    }
+    return $randomString;
+}
+
 function input($text) {
     echo $text.": ";
     $a = trim(fgets(STDIN));
@@ -23,16 +34,6 @@ function get_between($string, $start, $end)
         return substr($string,$ini,$len);
     }
 
-
-function generateRandomString($length = 10) {
-    $characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
-    $charactersLength = strlen($characters);
-    $randomString = '';
-    for ($i = 0; $i < $length; $i++) {
-        $randomString .= $characters[rand(0, $charactersLength - 1)];
-    }
-    return $randomString;
-}
 
 function nama() {
 	$ch = curl_init();
